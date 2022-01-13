@@ -1,0 +1,18 @@
+1) Import the ‘Quest Items Package’ into your scene.
+2) Create an empty game object called ‘QuestItemCounter’ and add the
+‘QuestItemsCounter’ Script to it.
+3) Next add the ‘Quest Item’ script to your quest items in the scene.
+4) Then add a large sphere collider with trigger ticked to each of your quest items in the
+scene. The Player will only be able to pick up this quest item if they are inside of the
+trigger.
+5) On your Quest Items drag the ‘Quest Items Counter’ Game Object into the slot on the
+script. Make sure you do this for every quest item.
+6) Next give each type of quest item a tag that corresponds to its type.
+'questItem1' For the first type of items
+'questItem2' For the second type of items
+'questItem3' For the third type of items
+'questItem4' For the fourth type of items
+7) Ensure that your player has the tag: “Player” and that they have a rigid body
+component.
+Now when the player enters the sphere collider of one of the quest items and
+presses the E key, they pick up the item.
