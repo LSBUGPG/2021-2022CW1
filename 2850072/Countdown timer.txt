@@ -1,0 +1,45 @@
+Making a timer in Unity
+-Countdowns to 0
+-Appearance in the UI
+
+1.Make a brand new UI text element and position it on the middle of the screen.
+2.Create a brand new script called "Timer".
+3. Paste this onto the "Timer" script: 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Timer : MonoBehaviour
+{
+    float currentTime;
+    public float startingTime = 10f;
+
+    [SerializeField] Text countdownText;
+    void Start()
+    {
+        currentTime = startingTime;
+    }
+    void Update()
+    {
+        currentTime = -1 * Time.deltaTime;
+        countdownText.text = currentTime.ToString("0");
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+            // Your Code Here
+        }
+    }
+}
+
+Brief explanation of the code:
+"current time" is the time that displays on the screen and automatically gets overwritten by the "startingTime" text, which is the time that the timer starts from.
+In the update function it adds "1" every second and "countdownText.text" is dispalying the text on the display.
+The " if (currentTime <= 0)" code is about, when the timer gets to "0" you are able to add any function to the timer. An example is when the timer ends, the timer restarts.
+        {
+            currentTime = 0;
+            // Your Code Here
+        }
+4. Back in unity, assign the script to the object created for the timer that's going to be active on the scene and add the text UI element to the public "Countdown Text" and assign a number for your starting time.
+5. Run the game.

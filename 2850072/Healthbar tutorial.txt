@@ -1,0 +1,81 @@
+Creating a health bar in Unity:
+1. Add an image to the hierarchy.
+2.Drag the image to the centre.
+4.Add the border of the bar(sprite).
+5.Add an empty GameObject and change its name to "Health Bar".
+6. Pair the border to the "Health Bar" game object.
+7.Add another image and name it "Fill". 
+8.Scale the fill image to the border of the health bar.
+9.Add a slider component to the "Health Bar" object and set everything to none.
+10.Drag the fill image to the "fill rect" function of the slider.
+11.Add a "Health bar" script to the "Healthbar" object.
+12.Add this code to the "Health bar" script:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Healthbar : MonoBehaviour
+{
+
+    public Slider slider;
+    public Gradient gradient;
+    public Image fill;
+    public void SetMaxHealth(int health)
+    {
+        slider.maxValue = health;
+        slider.value = health;
+
+       fill.color = gradient.Evaluate(1f);
+    }
+    public void SetHealth(int health)
+    {
+
+        slider.value = health;
+
+        fill.color = gradient.Evaluate(slider.normalizedValue);
+
+    }
+  
+
+}
+
+This code will set the health to max when the level starts. It also creates a public variable for the slider.
+
+//13. If you are going to use the script in a "player takes damage" game, add a player object and add a "Player" script:
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    public int maxHealth = 100;
+    public int currentHealth;
+
+    public Healthbar healthBar;
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(20);
+        }
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+}
+
+This code will help with setting the health of the player to the max when the level starts and make it when you press "Space", the player takes damage.
+14. If you want to add gradient to the health bar (make it so when the health is reduced, the color of the health bar changes.) 

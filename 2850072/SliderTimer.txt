@@ -1,0 +1,56 @@
+Timer using a slider Tutorial
+
+1.Start a unity project.
+2. From the hierarchy, add a slider, adjust its size/position in order to fit the center of the canvas.
+3.Remove the "Handle Slide Area" from the "Slider".
+4.Adjust the "Fill Area" of the slider, so it fits the slider box properly, since it was smaller than the box (because of resizing it at the beginning).
+5.Add text to the Canvas, rename it to "TimerText" and rename "New Text" to "00:00".
+6.Adjust the text so it's at the center of the slider box.
+7.Create an empty GameObject that you are going to add a script to, later on.
+8. Create a new "Script" folder then add a new script called "Timer" to it.
+9. Add this code to your script:
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Timer : MonoBehaviour
+{
+    // Start is called before the first frame update
+    public Slider timerSlider;
+    public Text timerText;
+    public float gameTime;
+
+    private bool stopTimer;
+    void Start()
+    {
+        stopTimer = false;
+        timerSlider.maxValue = gameTime;
+        timerSlider.value = gameTime;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        float time = gameTime - Time.time;
+
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time - minutes * 60f);
+
+        string textTime = string.Format("{0:0} : {1:00}", minutes, seconds);
+
+        if(time <= 0)
+        {
+            stopTimer = true;
+        }
+        if(stopTimer == false)
+        {
+            timerText.text = textTime;
+            timerSlider.value = time;
+        }
+    }
+}
+10. Back in Unity, add the script to the empty GameObject and add the slider to the public "Time Slider" and add the "Text" object to the public "Timer Text". Change the game time from "0" to "60".
+11. To make the slider more readable for the user, change the "Fill" Colour to Red in the Image (Script). That will make the Slider red as it get's lower and you will have a better idea of when you have little time left. 
+(12.) When I tried adding the script to the empty Game Object, I got an error saying "The script don't inherit a native class", which meant that when I created the script, I didn't rename it to "Timer" and the initial name that was 
+on public class of the script was "New Script" so I renamed it to "Timer" and that fixed the issue.

@@ -1,0 +1,26 @@
+How to spawn an object in Unity using the instantiate function:
+1. Create a scene. 
+2. Create a spawning object prefab.
+3. Create an empty game object and name it to "SpawnPoint". This will be the spawner of the object you want to instantiate. 
+4. Add a trigger object (it has to have a collider), tick "Is Trigger", so when you move through the trigger object, an object is instantiated.
+5. Make the "SpawnPoint" GameObject a child of the Trigger object.
+6. Add this script to the trigger object:
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpawnTrigger : MonoBehaviour
+{
+    public Transform SpawnPoint;
+    public Rigidbody Prefab;
+    
+    
+    private void OnTriggerEnter ()
+    {
+        Rigidbody RigidPrefab;
+        RigidPrefab = Instantiate(Prefab, SpawnPoint.position, SpawnPoint.rotation) as Rigidbody; 
+    }
+}
+Explanation of the code: It has the public spawn point and a prefab that has a rigid body, so when the object is instantiated it falls down to the ground.
+The instantiate function of the code is to instantiate the prefab you asign to the public rigidbody.
+7. Start the game and walk to the trigger object that has a trigger and an object should be instantiated.
