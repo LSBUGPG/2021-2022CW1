@@ -1,0 +1,2 @@
+These are the written tutorials in GitHub md format. This also includes the Learning Journal.
+https://github.com/mutulik/Tutorials_Game_Programming
