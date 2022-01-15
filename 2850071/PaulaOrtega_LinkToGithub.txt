@@ -1,0 +1,3 @@
+https://github.com/paurtg
+
+Added the documentation PDF to both, package folder and inside the package in Unity (just in case)
