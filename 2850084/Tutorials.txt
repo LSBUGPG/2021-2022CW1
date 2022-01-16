@@ -1,0 +1,4 @@
+Tutorial 1 - Animated Scene Transitions: https://www.youtube.com/watch?v=mqIZFYIR1PE
+Tutorial 2 - Selection Menu: https://www.youtube.com/watch?v=yXXpATcuJB4
+Tutorial 3 - Unity Shader Graph Liquids: https://www.youtube.com/watch?v=x7Xu-ARdrnk
+Tutorial 4 - Save System: https://www.youtube.com/watch?v=kEXxLqXlp54
