@@ -1,0 +1,25 @@
+		SWITCHING SCENES USING A TRIGGER 
+
+1. Start by adding the open scenes into the build settings. While in the first scene, go to "File" then "Build Settings". Next, press "Add Open Scenes". 
+
+2. Repeat step 1 with the second (and more, if necessary) scene once in it.
+
+3. Right click in the Assets folder and create a new C# script.
+
+4. On line 4 inside the C# script, add "using UnityEngine.SceneManagement;". This allows you to access Unity's scene management functions.
+
+5. Remove the "void Start()" and "void Update()" functions. These are not needed.
+
+6. Declare a new function using "void OnTriggerEnter(Collider other)". This states that if a Collider was to come into contact with the GameObject this script is attached to, something will happen.
+
+7. Inside this function, write "SceneManager.LoadScene("SCENE NAME HERE")"
+This will run a command that loads the scene either using the number in Unity's scene index or you can choose a specific scene by using quotation marks and writing the name of the scene. To do the latter, replace "SCENE NAME HERE" with the exact name of the intended scene that you want to move to. For the former, write the corresponding number in the brackets without quotation marks.
+
+8. Create the GameObject that will be used for a trigger. For a cube, go to "GameObject" then "3D Object" then select "Cube". Any GameObject can be used, as long as it has a "Collider" component (such as the Box Collider or Sphere Collider)
+
+9. On the GameObject created in step 8, ensure that the collider component has "Is Trigger" ticked. The box cannot be empty otherwise it will not work. "Is Trigger" allows it to use the "OnTriggerEnter" function.
+
+10. OPTIONAL: To make the Object invisible, disable the "Mesh Renderer" component on the GameObject. It will still serve it's original purpose.
+
+Attach this script to the GameObject created in step 8. Once this is done, any collision with this GameObject will load the scene that is named in step 7.
+

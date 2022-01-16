@@ -1,0 +1,18 @@
+		LEARNING JOURNAL
+
+FORMATTING: MM/DD/YYYY
+
+10/05/2021 
+When working on Tutorial 1, I realised that the public "string" was used instead of the usual public "GameObject" that I regularly use. I was reluctant at first, but realised shortly after that a string can also be used as a reference for a line of code. This was used in the "GameObject.Find(objectName)" part of the code with "objectName" being the string. So to sum it up, the code is looking for the GameObject placed in the "objectName" variable.
+
+10/12/2021
+During Tutorial 2, I had checked to see if the AI would still function normally without a NavMesh Agent. As it turns out, this wasn't the case. When the NavMesh is baked on the terrain, the AI can maneuver around normally, but this is not the case when it is absent. 
+
+10/12/2021
+Inside the C# script, at the very top I noticed that similar to the "SceneManagement" components, it's necessary to use the "using UnityEngine.AI;" line to access the AI components used in this project.
+
+10/20/2021
+When it comes to loading a scene, I can use the exact name of the scene using quotation marks, but when I used the numbers in brackets (0, 1, 2, etc) there was an error. As it turns out, the scenes that are being navigated must be added to Unity's build settings (accessed via CTRL + SHIFT + B).
+
+03/11/2021
+When working on the script to change camera views, the Cameras (when set to "false" by the SetActive statement) can still give a small warning that happens if the AudioListener component remains active. I solved this by setting the AudioListener to "false" as well.

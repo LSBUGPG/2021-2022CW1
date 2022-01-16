@@ -1,0 +1,22 @@
+	CONTROLLING A GAMEOBJECT FROM ANOTHER GAMEOBJECT
+
+1. Start with a scene that has 2 GameObjects. These must have a Rigidbody component for this script to work. The script will use this component as part of a reference.
+
+2. Create a new C# Script by right clicking in the "Assets" folder and pressing "Create new C# script"
+
+3. Once inside the C# code editor, in this case Visual Studio 2019, delete the start function and the update function.
+
+4. To start the coding, declare your variables. Write first "public GameObject;" then name it. In this case, it will be "someGameObject".
+
+5. Next, create a function using the "OnMouseDown" command. This is done by writing "private void OnMouseDown()"
+
+6. Inside, write "Rigidbody rb = someGameObject.GetComponent<Rigidbody>();. This tells the script when it detects a mouse click on the assigned object (someGameObject in this case) to find the "Rigidbody" Component of said object.
+
+7. Next, on a separate line write "rb.AddForce(Vector3.up, ForceMode.Impulse);. What this does is tells the script to add a force to the GameObject (again, someGameObject). It uses the "AddForce" command of the "rb" which refers to the recently fetched Rigidbody component.
+
+8. Now, when you enter the Unity editor again, attach the new script to the object you want to act as a "Trigger". In other words, the GameObject you will click to activate the force that was used in step 7.
+
+9. The script needs a reference to a GameObject, so in this case the "someGameObject" will be the object you drag into the slot. This will be the object that moves when clicked. So, the GameObject in step 8 will move the object in this step (step 9)
+
+Once that's done, the object that was used as a trigger shouldn't move, however the one used as "someGameObject" will get "kicked" by a small force upwards on each and every click!
+

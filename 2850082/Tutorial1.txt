@@ -1,0 +1,65 @@
+	SWITCHING CAMERAS USING KEYS 
+
+1. Start with a gameobject in a scene that you wish to adjust the views on.
+
+2. Create the required number of cameras [1 per view] either by duplicating the "Main Camera" object or clicking "GameObject" then "Camera" in the top bar.
+
+3. Once the required cameras are created, name them appropriately. [such as CameraOne, TopView, etc.] This is to make tracking them easier.
+
+5. Adjust the X, Y & Z positions of each camera to achieve the intended view.
+
+6. Right click in the "Assets" folder and create a new C# script.
+
+7.  Create an empty GameObject by right clicking in the hierarchy or use the shortcut "CTRL + Shift + N". This will manage the cameras used in the C# script.
+
+8. In the C# script, start by declaring each named camera as a "public GameObject".  For example, if the camera's name is "View1" write "public GameObject view1;"
+
+9. Declare an "AudioListener" variable for each camera. For example, "AudioListener View1Listener". This is used to activate and deactivate the listeners, because only one listener can be present in the scene.
+
+10. Inside the "void Start()" function, the script needs to find the AudioListener for all cameras in the scene. This is done by writing "View1Listener = View1.GetComponent<AudioListener>();". This tells the script on the FIRST frame of game startup to get the "Audio Listener" component attached to the named camera.
+
+11. Inside the "void Start()" function, set the camera's position using "CameraPositionChange(PlayerPrefs.GetInt("CameraPosition"));". Note that "CameraPosition" is not mandatory. It can be named something else.
+
+12. Inside the "void Update()" function, declare a new function called "SwitchCamera();". 
+
+13. Below the previous function, and outside the Update function, declare a new public function using "public void CameraPositionM()". Inside, write "CameraChangeCounter();". This is the function it will run.
+
+14. Next, on a separate line declare the "SwitchCamera" function but this time as a "void". Now to explain how the function will run.
+
+15. Next, use an "if" statement by writing "if (Input.GetKeyDown(KeyCode.C))". This simply searches for the C key and checks if it's being pressed every frame. The reason it's every frame is because the function "SwitchCamera" is inside the "Update" function. So on each frame, the script is running the function that looks for a C input.
+
+16. Inside the if statement used in step 15, write "CameraChangeCounter();". This will run the CameraChangeCounter function created in step 13. This will run if the script detects a C input from the player's keyboard.
+
+17. Below, delcare a void called "ChangeCameraCounter". This function will keep track of each camera's individual position and change them accordingly. It also remembers the last camera position that was used.
+
+18. Inside of the function, write "int CameraPositionCounter = PlayerPrefs.GetInt("CameraPosition");
+        CameraPositionCounter++;
+        CameraPositionChange(CameraPositionCounter);"
+This creates an integer that tracks the last camera position. 
+
+19. Using the "CameraPositionCounter" integer that was created in step 18, declare a new function with "void CameraPositionChange(int CamPosition)"
+    
+20. Iniside this function, write "
+        if (CamPosition > 3)
+        {
+            CamPosition = 0;
+         }"
+This means that if the "CamPosition" integer created in step 11 detects that the integer is higher than 3, it will reset the integer back to zero. Keep in mind that ALL integers start count at 0, not 1. So if there are 2 cameras total, use 1 instead of 3. If there are 3 cameras, use 2 instead of 3. 3 suggests there are 4 cameras matched with "0, 1, 2 & 3".
+
+21. Use "PlayerPrefs.SetInt("CameraPosition", CamPosition);" to keep track of the "CamPosition" integer.
+
+22. Set the first camera's position by using an if statement to suggest that if if the "CamPosition" integer is equal to 0,  the matching camera will be active. So this is expressed using "if (CamPosition == 0)"
+
+23. Next, inside the if statement created in step 22, write "View1.SetActive(true);
+            View1Listener.enabled = true;"
+This sets the camera that's named "View1" and the AudioListener of "View1" to the boolean "true". Therefore they are in an active state.
+
+24. All other cameras must be disabled in the event that one of the cameras is being used. So next, write "View2AudioLis.enabled = false;
+            Camera2.SetActive(false);"
+This disables the AudioListener and Camera GameObject of the stated camera. Replace "Camera2" with the name of the second camera, this will be mapped to the "1" integer. In addition, replace "View2AudioLis" with the name of the second camera's AudioListener which would have been stated in step 9.
+
+25. Next, the second camera's if statement should say ""if (CamPosition == 1)" to suggest the second camera in the order of numbers listed in step 20.
+
+26. Likewise, with the second camera being active after the "C" key is pressed, switch the 2 "true" words in the code given in step 23 to "false". Next, enable the second camera by switching the 2 "false" words in step 24's code to "true".
+
+Now, attach the script to the Empty GameObject created in step 7. It now accepts minimum 2 GameObjects, so drag the corresponding Camera object into the position. Once this is done, the player will be able to cycle through all camera views, with it resetting to the first view after reaching the last view.

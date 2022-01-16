@@ -1,0 +1,23 @@
+	MAKE AI OBJECTS FOLLOW THE PLAYER
+
+1. Setup a scene with a terrain, a player object that can be controlled and at least one object that is going to follow the player.
+
+2. Head to "Window" in the menu bar and navigate to "AI". Once there, click on "Navigation". This will create a new window adjacent to the inspector labelled "Navigation".
+
+3. Once in the Navigation window, click on "Bake". This will create a surface that the AI can maneuver freely over.
+
+4. Select the enemy AI objects and add a component to them. The component of choice is called a "Nav Mesh Agent". Here you can adjust the stopping distance of the AI, which will ensure that the AI does not pass a certain distance (in given units) within the radius of the player object.
+
+5. Next, create a new C# script by right clicking in the assets folder and clicking "Create new C# Script"
+
+6. In the script editor, start by declaring your variables. Write "public NavMeshAgent enemy;". This will refer to the "Nav Mesh Agent" component on our AI.
+
+7. Create another variable by writing "public Transform Player;". This will refer to the player object's position. The player object is the object that you control via input.
+
+8. Inside the "void Update" function, write "enemy.SetDestination(Player.position);". This tells the "enemy" object to set a course to the "Player" object's position over the surface of the Nav Mesh created in step 2.
+
+9. Save the script and head back to unity. Drag the C# script onto each enemy that wil use the ability to follow the player.
+
+10. Underneath the script, inside the inspector there are 2 spots for the script to accept the "Player" and "Enemy" spaces. Drag the player object into "Player" and the corresponding "Enemy" object into "Enemy".
+
+When you play the game, all enemy objects should now follow the player.
