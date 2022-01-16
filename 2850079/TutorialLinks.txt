@@ -1,0 +1,15 @@
+1. Mouse Movement Script Tutorial
+
+https://github.com/georgesocol/ProgrammingLearningJournal/blob/0310f2f7a1aa6411ab2d7f0a47cac9f0eac2fad4/Mouse%20Movement%20Script%20Tutorial.md
+
+2. Falling Platform Script Tutorial
+
+https://github.com/georgesocol/ProgrammingLearningJournal/blob/0310f2f7a1aa6411ab2d7f0a47cac9f0eac2fad4/Falling%20Platform%20Script%20Tutorial.md
+
+3. Bullet Shooting Gun Script Tutorial
+
+https://github.com/georgesocol/ProgrammingLearningJournal/blob/0310f2f7a1aa6411ab2d7f0a47cac9f0eac2fad4/Bullet%20Shooting%20Gun%20Script%20Tutorial.md
+
+4. Moving Player With an Object Tutorial
+
+https://github.com/georgesocol/ProgrammingLearningJournal/blob/0310f2f7a1aa6411ab2d7f0a47cac9f0eac2fad4/Moving%20player%20with%20an%20object%20tutorial.md
