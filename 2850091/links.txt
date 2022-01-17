@@ -1,0 +1,28 @@
+Damon Mackins - Game Programming CW1 Links
+
+Tutorials
+
+Day and Night Cycle:
+https://github.com/NomadMoth/Day-Night-Cycle-Tutorial/blob/main/Tutorial.md
+
+Moving Platform:
+https://github.com/NomadMoth/Moving-Platform-Tutorial/blob/main/Tutorial.md
+
+Fading Door:
+https://github.com/NomadMoth/Fading-Door/blob/main/Tutorial.md
+
+Falling Platform:
+https://github.com/NomadMoth/Falling-Platform/blob/main/Tutorial.md
+
+
+Package
+FPS Controller (with guns and target):
+https://github.com/NomadMoth/FPS-Controller
+
+
+Journal
+https://docs.google.com/document/d/12zd5otQTP-0QiEucsyJv0VGJC3pMt0HgO2a8gA_RuRI/edit
+
+
+Programming Log
+https://docs.google.com/spreadsheets/d/1sC5NdD2jN7ykYOBwhCQNhpDH1x1kFg8hfB7rtqYvIc4/edit#gid=0
