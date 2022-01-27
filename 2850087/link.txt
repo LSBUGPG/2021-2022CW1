@@ -5,3 +5,8 @@ https://github.com/alazouras?tab=repositories
 Link to my Github with all the tutorial write ups
 
 Amelia Lazouras :)
+
+https://github.com/alazouras/Mouse-Follow-Tutorial
+https://github.com/alazouras/Smooth-Camera-Follow
+https://github.com/alazouras/Dialogue-Options-Tutorial
+https://github.com/alazouras/Dialogue-System-Tutorial
