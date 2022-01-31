@@ -1,0 +1,12 @@
+Hello,
+
+My component package has a few things, the main scripts being:
+- first person look	- mouse
+- movement (WASD) 	- with gravity
+- FlashLight 		- Toggle with F
+- Pressure Plate 	- Both the block and player can stand on this to activate something
+- Block Pickup/Drop	- hold left mouse when looking at the block
+
+Thanks
+
+Oliver Mota
